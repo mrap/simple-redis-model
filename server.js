@@ -1,16 +1,10 @@
-var redis = require('redis'),
-    client = redis.createClient();
+var DBModel = require('./db-model')
 
-client.on("error", function(err){
-  console.error(err);
-});
+var MyModel = new DBModel("MyModel", ['attributeA', 'attributeB'])
+var obj = MyModel.new({name: "poop"})
 
-var Graph = require('./graph.js')
-var Hub = require('./hub.js')
-
-var g = new Graph()
-var hub = new Hub(5, 10)
-g.addHub(hub)
-console.log(g.size())
-console.log(hub.size())
+MyModel.save(obj, function(err, res){
+  MyModel.get(res, function(err, res){
+  })
+})
 
