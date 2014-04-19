@@ -1,6 +1,6 @@
 {
   "name": "simple-redis-model",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Simple Redis ORM for Node.js.",
   "main": "./lib/simple-redis-model.js",
   "dependencies": {
@@ -14,6 +14,6 @@
   "license": "MIT",
   "repositories": {
     "type": "git",
-    "url": "https://github.com/mrap/simple-redis-client"
+    "url": "https://github.com/mrap/simple-redis-model"
   }
 }
