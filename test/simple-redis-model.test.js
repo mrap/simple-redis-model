@@ -109,7 +109,7 @@ describe("RedisModel", function(){
       })
 
       it(".save() returns the object_id", function(){
-        objID.should.eq("CustomModel_id:1")
+        objID.should.eq("custom_model:1")
       })
 
       it(".get() returns the object from the db", function(done){
