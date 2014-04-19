@@ -119,6 +119,14 @@ describe("RedisModel", function(){
           done()
         })
       })
+
+      it(".delete() returns deleted obj", function(done){
+        CustomModel.delete(objID, function(err, res){
+          if (err) done(err)
+          res.should.eq.customObj
+          done()
+        })
+      })
     })
   })
 })
