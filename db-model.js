@@ -57,35 +57,4 @@ DBModel.prototype = {
   }
 }
 
-// client.nextUID = function(modelName, callback) {
-//   client.hincrby("nextUID", modelName, 1, function(err, reply){
-//     if (err) return console.error(err)
-//     callback(formattedKey(modelName, reply.toString()))
-//   })
-// }
-//
-// client.addChild = function(parent, child, callback) {
-//   var key = formattedKey(parent.uid(), typeof child)
-//   console.log(key)
-//   client.set(key, child.uid(), redis.print)
-// }
-//
-// client.getChildCount = function(parent, childModelName, callback) {
-//   var key = formattedKey(parent.uid(), childModelName)
-//   console.log(key)
-//   client.scard(key, function(err, reply){
-//     if (err) return console.error(err)
-//     callback(reply)
-//   })
-// }
-
-// client.addToChildSet = function(uid, childModelName, value) {
-//   var key = formattedKey(uid, childModelName) 
-//   client.set(key, value, redis.print);
-// }
-
-// client.saveObject = function(modelName, objectInfo) {
-//   this.hset(modelKey(modelName), nextUID(modelName), 1, redis.print)
-// }
-
 module.exports = DBModel
