@@ -65,6 +65,10 @@ describe("RedisModel", function(){
         customObj = CustomModel.new()
       })
 
+      it("should have a modelName", function(){
+        customObj.modelName.should.eq("CustomModel")
+      })
+
       it("should instantiate without the attrs", function(){
         customObj.should.not.have.ownProperty(attr1)
         customObj.should.not.have.ownProperty(attr2)
