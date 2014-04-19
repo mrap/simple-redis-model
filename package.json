@@ -11,5 +11,9 @@
   },
   "author": "Mike Rapadas <mike@mrap.me>",
   "directories": { "lib": "./lib", "test": "./test" },
-  "license": "MIT"
+  "license": "MIT",
+  "repositories": {
+    "type": "git",
+    "url": "https://github.com/mrap/simple-redis-client"
+  }
 }
