@@ -4,13 +4,13 @@ var chai   = require('chai'),
 describe("RedisModel", function(){
   // Flush Redis DB
   beforeEach(function(done){
-    var redis = require('../lib/redis-client')
-    redis.flushdb(function(err, reply){
+    var client = require('redis').createClient()
+    client.flushdb(function(err, reply){
       if (err) throw err
       done()
     })
   })
-  var RedisModel = require('../lib/redis-model')
+  var RedisModel = require('../lib/simple-redis-model')
 
   describe("creating a custom model", function(){
     var customModel
