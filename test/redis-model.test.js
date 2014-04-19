@@ -83,7 +83,7 @@ describe("RedisModel", function(){
     })
   })
 
-  describe("saving/getting objects to Redis", function(){
+  describe("save/get/delete objects to Redis", function(){
     var attr1
     var attr2
     var customAttrs
@@ -97,7 +97,7 @@ describe("RedisModel", function(){
       done()
     })
 
-    describe("saving an object", function(){
+    describe("saving and getting an object", function(){
       var objID
       beforeEach(function(done){
         customObj = CustomModel.new({attr1: "my attribute"})
@@ -108,11 +108,11 @@ describe("RedisModel", function(){
         })
       })
 
-      it("should return the objectID", function(){
+      it(".save() returns the object_id", function(){
         objID.should.eq("CustomModel_id:1")
       })
 
-      it("should be able to get the object from the db", function(done){
+      it(".get() returns the object from the db", function(done){
         CustomModel.get(objID, function(err, res){
           if (err) throw err
           res.should.eq.customObj
