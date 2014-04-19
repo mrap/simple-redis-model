@@ -98,15 +98,24 @@ describe("RedisModel", function(){
     })
 
     describe("saving an object", function(){
+      var objID
       beforeEach(function(done){
         customObj = CustomModel.new({attr1: "my attribute"})
-        done()
+        CustomModel.save(customObj, function(err, res){
+          if (err) throw err
+          objID = res
+          done()
+        })
       })
 
-      it("should return the objectID", function(done){
-        CustomModel.save(customObj, function(err, objID){
+      it("should return the objectID", function(){
+        objID.should.eq("CustomModel_id:1")
+      })
+
+      it("should be able to get the object from the db", function(done){
+        CustomModel.get(objID, function(err, res){
           if (err) throw err
-          objID.should.equal("CustomModel_id:1")
+          res.should.eq.customObj
           done()
         })
       })
